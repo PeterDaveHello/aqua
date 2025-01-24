@@ -1,6 +1,6 @@
 FROM alpine:3.21.2
 COPY dist/aqua-docker /usr/local/bin/aqua
-RUN apk add curl bash sudo git vim
+RUN apk add --no-cache curl bash sudo git vim
 RUN adduser -u 1000 -G wheel -D foo
 RUN sed -i 's|# %wheel ALL=(ALL:ALL) NOPASSWD|%wheel ALL=(ALL:ALL) NOPASSWD|' /etc/sudoers
 USER foo
